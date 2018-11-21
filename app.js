@@ -23,7 +23,8 @@ const users = require('./routes/users')
 const port = 3000;
 
 // CORS Middleware
-//app.use(cors);
+app.use(cors());
+app.use('/users', users);
 
 /* Set Static Folder:
     This is a place to put client side files which will be 

@@ -12,7 +12,10 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
 
 import { ValidateService } from './services/validate.service';
+import { AuthService } from './services/auth.service';
 import { FlashMessagesModule } from 'angular2-flash-messages';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent}, // Home Page
@@ -36,9 +39,11 @@ const appRoutes: Routes = [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
-    FlashMessagesModule.forRoot()
+    FlashMessagesModule.forRoot(),
+    HttpClientModule,
+    HttpModule
   ],
-  providers: [ValidateService],
+  providers: [ValidateService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
