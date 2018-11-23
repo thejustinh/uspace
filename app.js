@@ -24,7 +24,7 @@ const port = 3000;
 
 // CORS Middleware
 app.use(cors());
-app.use('/users', users);
+//app.use('/users', users); WTF uncommenting breaks the login and routes?!? need to look into this
 
 /* Set Static Folder:
     This is a place to put client side files which will be 

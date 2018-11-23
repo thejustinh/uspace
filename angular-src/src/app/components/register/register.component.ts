@@ -24,7 +24,7 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
   }
 
-  onRegisterSubmit(){
+  onRegisterSubmit() {
     const user = {
       name: this.name,
       email: this.email,
@@ -33,13 +33,13 @@ export class RegisterComponent implements OnInit {
     }
 
     // Required Fields
-    if (!this.validateService.validateRegister(user)){
+    if (!this.validateService.validateRegister(user)) {
       this.flashMessage.show("Please fill in all fields", {cssClass: 'alert-danger', timeout: 3000});
       return false;
     }
 
     // Validate Fields
-    if (!this.validateService.validateEamil(user.email)){
+    if (!this.validateService.validateEamil(user.email)) {
       this.flashMessage.show("Please use a valid email", {cssClass: 'alert-danger', timeout: 3000});
       return false;
     }
