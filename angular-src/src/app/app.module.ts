@@ -17,13 +17,19 @@ import { FlashMessagesModule } from 'angular2-flash-messages';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { AuthGuard } from './guards/auth.guard';
+import { RentASpaceComponent } from './components/rent-a-space/rent-a-space.component';
+import { ListASpaceComponent } from './components/list-a-space/list-a-space.component';
+import { AboutComponent } from './components/about/about.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent}, // Home Page
+  {path: 'about', component: AboutComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'login', component: LoginComponent},
   {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
-  {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]}
+  {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
+  {path: 'rent-a-space', component: RentASpaceComponent},
+  {path: 'list-a-space', component: ListASpaceComponent}
 ]
 
 @NgModule({
@@ -34,7 +40,10 @@ const appRoutes: Routes = [
     RegisterComponent,
     HomeComponent,
     DashboardComponent,
-    ProfileComponent
+    ProfileComponent,
+    RentASpaceComponent,
+    ListASpaceComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
